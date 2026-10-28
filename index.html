@@ -199,7 +199,6 @@
             transition: width 0.6s ease-out;
         }
 
-        /* Music control floating button */
         #music-toggle {
             position: fixed;
             bottom: 20px;
@@ -223,7 +222,6 @@
             transform: scale(1.1);
         }
 
-        /* Grid for 'Your Pictures That Makes Me Happy' */
         .happy-pics-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -283,7 +281,6 @@
     <div id="aurora-background"></div>
     <div id="canvas-container" style="position: fixed; top: 0; left: 0; z-index: 1; pointer-events: none;"></div>
 
-    <!-- Background Audio Element -->
     <audio id="bg-music" loop>
         <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mpeg">
     </audio>
@@ -317,19 +314,19 @@
                 <h2 class="anim-child text-2xl md:text-3xl font-bold text-gradient mb-3">Your Pictures That Makes Me Happy</h2>
                 <div class="anim-child happy-pics-grid mb-5">
                     <div class="polaroid-card">
-                        <img src="photo1.jpeg" alt="Memory 1">
+                        <img src="WhatsApp Image 2026-10-28 at 5.24.21 PM.jpeg" alt="Memory 1">
                         <div class="polaroid-caption">My favorite smile ✨</div>
                     </div>
                     <div class="polaroid-card">
-                        <img src="photo2.jpeg" alt="Memory 2">
+                        <img src="WhatsApp Image 2026-10-28 at 5.24.22 PM (1).jpeg" alt="Memory 2">
                         <div class="polaroid-caption">Pure happiness 💖</div>
                     </div>
                     <div class="polaroid-card">
-                        <img src="photo3.jpeg" alt="Memory 3">
+                        <img src="WhatsApp Image 2026-10-28 at 5.24.22 PM (2).jpeg" alt="Memory 3">
                         <div class="polaroid-caption">Cutest moments 🌸</div>
                     </div>
                     <div class="polaroid-card">
-                        <img src="photo4.jpeg" alt="Memory 4">
+                        <img src="WhatsApp Image 2026-10-28 at 5.24.22 PM.jpeg" alt="Memory 4">
                         <div class="polaroid-caption">My whole world 💫</div>
                     </div>
                 </div>
@@ -372,7 +369,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Background Music Setup
             const bgMusic = document.getElementById('bg-music');
             const musicToggle = document.getElementById('music-toggle');
             let isPlaying = false;
@@ -390,7 +386,6 @@
                 }
             });
 
-            // Auto-play audio on first user interaction
             document.body.addEventListener('click', () => {
                 if (!isPlaying) {
                     bgMusic.play().then(() => {
@@ -400,7 +395,6 @@
                 }
             }, { once: true });
 
-            // Three.js Background Hearts
             let scene, camera, renderer, hearts = [];
             const canvasContainer = document.getElementById('canvas-container');
 
@@ -476,47 +470,3 @@
                     nextStep.classList.add('active');
                     gsap.fromTo(nextStep.querySelectorAll('.anim-child'),
                         { opacity: 0, y: 30, scale: 0.95 },
-                        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out', stagger: 0.15, delay: 0.3 }
-                    );
-                }
-                updateProgressBar();
-            }
-
-            function createNavListener(buttonId, action) { 
-                const btn = document.getElementById(buttonId);
-                if(btn) btn.addEventListener('click', action); 
-            }
-            createNavListener('start-btn', () => { currentStep++; showStep(currentStep); });
-            createNavListener('next-btn-2', () => { currentStep++; showStep(currentStep); });
-            createNavListener('next-btn-3', () => { currentStep++; showStep(currentStep); });
-            createNavListener('next-btn-4', () => { currentStep++; showStep(currentStep); });
-
-            confettiBtn.addEventListener('click', () => {
-                confettiBtn.style.pointerEvents = 'none';
-                gsap.to(confettiBtn, { opacity: 0, duration: 0.5 });
-                gsap.to(finalWishText, { opacity: 1, y: 0, duration: 1.2, ease: 'elastic.out(1, 0.6)', delay: 0.3 });
-
-                const duration = 5 * 1000;
-                const animationEnd = Date.now() + duration;
-                const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100 };
-                const confettiColors = ['#ff3879', '#ff74a4', '#ffc0cb', '#f0e1f7', '#ffffff'];
-
-                function randomInRange(min, max) { return Math.random() * (max - min) + min; }
-
-                const interval = setInterval(() => {
-                    const timeLeft = animationEnd - Date.now();
-                    if (timeLeft <= 0) return clearInterval(interval);
-                    const particleCount = 50 * (timeLeft / duration);
-                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }, colors: confettiColors }));
-                    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }, colors: confettiColors }));
-                }, 250);
-            });
-
-            initThreeJS();
-            updateProgressBar();
-            showStep(1);
-        });
-    </script>
-</body>
-
-</html>
