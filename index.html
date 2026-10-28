@@ -16,27 +16,16 @@
     <style>
         :root {
             --bg-color: #2a0a2a;
-            /* Deep purple-pink */
             --primary-color: #ff3879;
-            /* Vivid hot pink */
             --secondary-color: #ff74a4;
-            /* Softer, warm pink */
             --accent-glow: rgba(255, 100, 150, 0.6);
-            /* Brighter pink glow */
             --card-bg: rgba(255, 150, 200, 0.1);
-            /* Light, translucent pink for cards */
             --card-border: rgba(255, 200, 220, 0.25);
-            /* Slightly more visible light pink border */
             --text-light: #fce7f3;
-            /* Very light pink/white */
             --text-medium: #fbcfe8;
-            /* Light pink */
             --text-gradient-start: #ffc2e2;
-            /* Lighter pink for text gradient */
             --text-gradient-mid: #ff8ab6;
-            /* Mid pink for text gradient */
             --text-gradient-end: #ffffff;
-            /* White for text gradient */
         }
 
         body {
@@ -63,7 +52,6 @@
             background-size: 200% 200%;
         }
 
-     
         #app {
             display: grid;
             place-items: center;
@@ -105,7 +93,6 @@
                 padding: 1.5rem;
             }
         }
-
 
         .step.active {
             opacity: 1;
@@ -166,9 +153,7 @@
         }
 
         @keyframes heartbeat {
-
-            0%,
-            100% {
+            0%, 100% {
                 transform: scale(1);
                 filter: drop-shadow(0 0 20px var(--accent-glow));
             }
@@ -236,7 +221,6 @@
 
         #polaroid-inner {
             background: linear-gradient(to bottom right, #fef2f9, #ffe4f0);
-            /* Soft pinkish white */
             padding: 1.5rem;
             padding-bottom: 1.2rem;
             border-radius: 1rem;
@@ -252,12 +236,10 @@
 
         #polaroid-inner img {
             border-radius: 0.75rem;
-            /* More rounded image corners */
         }
 
         #polaroid-inner p {
             color: #5a0c3b;
-            /* Darker pink text */
         }
 
         .final-wish-text {
@@ -325,7 +307,8 @@
                 <h2 class="anim-child text-4xl md:text-5xl font-bold text-gradient mb-6">A Snapshot of Our Story...</h2>
                 <div id="polaroid" class="anim-child mb-6">
                     <div id="polaroid-inner" class="rounded-lg shadow-2xl">
-                        <img src="https://static.vecteezy.com/system/resources/previews/036/619/697/non_2x/ai-generated-couple-of-lovers-in-cartoon-style-on-transparent-background-png.png"
+                        <!-- এখানে তোমার ছবিটি সরাসরি Base64 কোড হিসেবে বসিয়ে দেওয়া হয়েছে -->
+                        <img src="data:image/jpeg;base64,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..."
                             alt="A special memory" class="w-full h-72 object-cover rounded-md">
                         <p class="text-center font-semibold mt-4 text-xl italic">"Us" – my favorite chapter.</p>
                     </div>
@@ -375,22 +358,19 @@
                 heartShape.moveTo(25, 25); heartShape.bezierCurveTo(25, 25, 20, 0, 0, 0); heartShape.bezierCurveTo(-30, 0, -30, 35, -30, 35); heartShape.bezierCurveTo(-30, 55, -10, 77, 25, 95); heartShape.bezierCurveTo(60, 77, 80, 55, 80, 35); heartShape.bezierCurveTo(80, 35, 80, 0, 50, 0); heartShape.bezierCurveTo(35, 0, 25, 25, 25, 25);
                 const extrudeSettings = { depth: 8, bevelEnabled: true, bevelSegments: 2, steps: 2, bevelSize: 1, bevelThickness: 1 };
                 const geometry = new THREE.ExtrudeGeometry(heartShape, extrudeSettings);
-                // Updated heart colors to match the new pink theme
-                const colors = [0xff6e8e, 0xff3879, 0xfc94af, 0xffc0cb, 0xe82979, 0xd06eff, 0xffa0c7]; // More pink/purple shades
+                const colors = [0xff6e8e, 0xff3879, 0xfc94af, 0xffc0cb, 0xe82979, 0xd06eff, 0xffa0c7];
 
-                for (let i = 0; i < 30; i++) { // Increased heart count for more presence
-                    // Hearts are visible from the start with full opacity
+                for (let i = 0; i < 30; i++) {
                     const material = new THREE.MeshPhongMaterial({ color: colors[Math.floor(Math.random() * colors.length)], emissive: 0x181818, shininess: 120, specular: 0xffffff, transparent: true, opacity: 0.85 });
                     const heart = new THREE.Mesh(geometry, material);
-                    const scale = (Math.random() * 0.06) + 0.03; // Slightly larger hearts
+                    const scale = (Math.random() * 0.06) + 0.03;
                     heart.scale.set(scale, scale, scale);
-                    heart.position.set((Math.random() - 0.5) * 80, (Math.random() - 0.5) * 80, (Math.random() - 0.5) * 30); // Wider distribution
+                    heart.position.set((Math.random() - 0.5) * 80, (Math.random() - 0.5) * 80, (Math.random() - 0.5) * 30);
                     heart.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
-                    heart.userData = { originalY: heart.position.y, rotationSpeedX: (Math.random() - 0.5) * 0.02, rotationSpeedY: (Math.random() - 0.5) * 0.02, floatDistance: Math.random() * 3 + 1.5 }; // Faster rotation, more float
+                    heart.userData = { originalY: heart.position.y, rotationSpeedX: (Math.random() - 0.5) * 0.02, rotationSpeedY: (Math.random() - 0.5) * 0.02, floatDistance: Math.random() * 3 + 1.5 };
                     hearts.push(heart);
                     scene.add(heart);
 
-                    // Initial animation for hearts - now just position and scale, not opacity from 0
                     gsap.from(heart.position, {
                         y: heart.position.y - 40,
                         duration: 2.5,
@@ -409,11 +389,11 @@
 
             function animate() {
                 requestAnimationFrame(animate);
-                const time = Date.now() * 0.0007; // Slightly faster animation for hearts
+                const time = Date.now() * 0.0007;
                 hearts.forEach(heart => {
                     heart.rotation.x += heart.userData.rotationSpeedX;
                     heart.rotation.y += heart.userData.rotationSpeedY;
-                    heart.position.y = heart.userData.originalY + Math.sin(time + heart.position.x * 0.15) * heart.userData.floatDistance; // More organic float
+                    heart.position.y = heart.userData.originalY + Math.sin(time + heart.position.x * 0.15) * heart.userData.floatDistance;
                 });
                 renderer.render(scene, camera);
             }
@@ -438,12 +418,12 @@
 
             function showStep(stepNumber) {
                 steps.forEach(step => step.classList.remove('active'));
-                const nextStep = document.getElementById(`step${stepNumber}`);
-                if (nextStep) {
-                    nextStep.classList.add('active');
-                    gsap.fromTo(nextStep.querySelectorAll('.anim-child'),
+                const textStep = document.getElementById(`step${stepNumber}`);
+                if (textStep) {
+                    textStep.classList.add('active');
+                    gsap.fromTo(textStep.querySelectorAll('.anim-child'),
                         { opacity: 0, y: 40, scale: 0.95 },
-                        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power3.out', stagger: 0.2, delay: 0.5 } // Smoother ease for content
+                        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power3.out', stagger: 0.2, delay: 0.5 }
                     );
                 }
                 updateProgressBar();
@@ -504,6 +484,7 @@
                 });
             });
 
+            init3JS(); // or initThreeJS
             initThreeJS();
             updateProgressBar();
             showStep(1);
